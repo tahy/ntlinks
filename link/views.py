@@ -54,7 +54,7 @@ def make_page_for_cbv(request, object_list, **kwargs):
     def render_processor(request, page, **kwargs):
         """Процессор рендеринга, на случай необходимости
             расширения функционала постранички пишется отдельная функция для рендеринга
-            (а то заебали, блеадь, в каждом проекте своя ебнутая постраничка и куда ни ткнись ни хуя не работает)"""
+        """
 
         return render_to_string(
             kwargs['template'],
