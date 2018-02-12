@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h4>{{ object.name }}</h4>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ message|safe }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <p>
+        <a href="{{ object.get_url }}">&#8594; {{ object.get_url }}</a>
+        ({{ object.created_at }})
+        <small>[переходов: {{ object.refer_count }}] </small>
+    </p>
+
+{% endblock %}
